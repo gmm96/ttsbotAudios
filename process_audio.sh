@@ -13,7 +13,7 @@ do
 	orig_extension=`echo "$audio" | cut -d'.' -f2`
 	mod_name="$orig_name.$mod_extension"
 	mv tmp.ogg $mod_name
-	if [ $orig_extension -ne "ogg"]; then
+	if [ $orig_extension != $mod_extension ]; then
 		rm $audio
 	fi
 	git add $mod_name
